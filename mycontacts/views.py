@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from .forms import AddForm
 from .models import Contact
-from django.http import HttpResponseRedirect
+from django.http import HttpResponse
 
 def show(request):
     """ 
@@ -10,6 +10,10 @@ def show(request):
     """
     contact_list = Contact.objects.all()
     return render(request, 'mycontacts/show.html',{'contacts': contact_list})
+
+def contact(request):
+    return render(request, 'mycontacts/contact_content.html')
+
     
 def add(request):
     """ This function is called to add one contact member to your contact list in your Database """

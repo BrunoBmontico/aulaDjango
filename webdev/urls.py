@@ -5,5 +5,6 @@ from mycontacts import views
 urlpatterns = [
     path(r'admin/', admin.site.urls),
     path(r'', views.show),
+    path(r'contact/', views.contact),
     path(r'add/', views.add),
 ]
