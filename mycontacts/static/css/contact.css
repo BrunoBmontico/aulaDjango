@@ -51,7 +51,7 @@
     font-size: 18px;   
 }
 
-a, a:hover{
+#email, #email:hover{
     color: #F86A83;
     cursor: pointer;
 }

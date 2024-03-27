@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404
 from .forms import AddForm
 from .models import Contact
 from django.http import HttpResponse
@@ -11,8 +11,10 @@ def show(request):
     contact_list = Contact.objects.all()
     return render(request, 'mycontacts/show.html',{'contacts': contact_list})
 
-def contact(request):
-    return render(request, 'mycontacts/contact_content.html')
+def contact_view(request, contact_id):
+    contact = get_object_or_404(Contact, pk=contact_id)
+
+    return render(request, 'mycontacts/contact_content.html', {'contact': contact})
 
     
 def add(request):
