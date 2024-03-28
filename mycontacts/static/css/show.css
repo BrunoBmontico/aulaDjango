@@ -7,32 +7,6 @@ html{
 	text-decoration: none;
 }
 
-.container-btn{
-	width: 100%;
-	height: 30px;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	gap: 10px;
-}
-
-.btn-show{
-	margin-top: 30px;
-	background-color: #EE4664;
-	color: #fff;
-	border: none;
-	border-radius: 5px;
-	width: 60px;
-	height: 30px;
-}
-
-.btn-show:hover{
-	border: 1.5px solid #EE4664;
-	background-color: transparent;
-	color: #F86A83;
-	transition: .2s
-}
-
 .grid {
   		overflow: hidden;
 		padding: 2em 2em;

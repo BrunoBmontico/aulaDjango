@@ -18,16 +18,70 @@
 #contact{
     border: 2px solid #EB4764;
     width: 500px;
-    height: 700px;
+    height: 400px;
+
+    display: flex;
+    flex-direction: column;
+    gap: 10px
+}
+
+.container-btn{
+    
+	width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    padding: 5px;
+}
+
+#btn-show{
+    font-size: 40px;
+	background-color: transparent;
+	color: #EE4664;
+	border: none;
+	width: 45px;
+	height: 40px;
 
     display: flex;
     align-items: center;
+    justify-content: center;
+    z-index: 1;
+}
+
+#btn-show:hover{
+	background-color: #ffe6ea;
+    transition: .2s;
+}
+
+#container-box-btn{
+    position: absolute; 
+    padding-top: 45px;
+    gap: 5px;
+}
+
+.box-open{
+    display: flex;
+    flex-direction: column;
+}
+
+.box-closed{
+    display:none;
+}
+
+
+.btn-box{
+    color: #EE4664;
+    background-color: transparent;
+    border: none;
+    width: 50px;
+    height: 30px;
+}
+
+.btn-box:hover{
+    box-shadow: inset 0px 0px 0px 1px #EE4664;
 }
 
 #infos-container{
     width: 100%;
-    height: 550px;
-
     display: flex;
     justify-content: center;
 }
@@ -35,7 +89,6 @@
 #infos{
     list-style: none;
     display: flex;
-
     flex-direction: column;
     align-items: center;
     gap: 30px
@@ -43,7 +96,6 @@
 
 #name{
     font-size: 50px;
-    margin-top: 40px;
     margin-bottom: 20px
 }
 
