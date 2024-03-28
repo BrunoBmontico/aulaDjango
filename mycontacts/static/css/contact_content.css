@@ -45,6 +45,7 @@
     align-items: center;
     justify-content: center;
     z-index: 1;
+    margin-right: 3px;
 }
 
 #btn-show:hover{
@@ -61,10 +62,21 @@
 .box-open{
     display: flex;
     flex-direction: column;
+    animation: box-open .3s;
 }
 
 .box-closed{
-    display:none;
+    display: none;
+}
+
+@keyframes box-open {
+    from {
+        opacity:0;
+        transform:translate3d(0, -50px, 0)
+    } to {
+        opacity:1;
+        transform:translate3d(0,0,0)
+    }
 }
 
 
@@ -78,6 +90,7 @@
 
 .btn-box:hover{
     box-shadow: inset 0px 0px 0px 1px #EE4664;
+    transition: .2s;
 }
 
 #infos-container{
