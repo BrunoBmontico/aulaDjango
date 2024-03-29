@@ -1,7 +1,7 @@
 from django.shortcuts import render, get_object_or_404
 from .forms import AddForm
 from .models import Contact
-from django.http import HttpResponse
+from django.http import HttpResponse, HttpResponseRedirect
 
 def show(request):
     """ 
@@ -21,8 +21,7 @@ def contact_delete(request, contact_id):
 
     contact.delete()
 
-    contact_list = Contact.objects.all()
-    return render(request, 'mycontacts/show.html',{'contacts': contact_list})
+    return HttpResponseRedirect('/')
     
 def add(request):
     """ This function is called to add one contact member to your contact list in your Database """
