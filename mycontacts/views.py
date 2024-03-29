@@ -16,6 +16,13 @@ def contact_view(request, contact_id):
 
     return render(request, 'mycontacts/contact_content.html', {'contact': contact})
 
+def contact_delete(request, contact_id):
+    contact = get_object_or_404(Contact, pk=contact_id)
+
+    contact.delete()
+
+    contact_list = Contact.objects.all()
+    return render(request, 'mycontacts/show.html',{'contacts': contact_list})
     
 def add(request):
     """ This function is called to add one contact member to your contact list in your Database """
