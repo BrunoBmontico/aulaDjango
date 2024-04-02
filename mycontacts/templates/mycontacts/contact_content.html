@@ -26,20 +26,20 @@
             {% csrf_token %}
 
             <label for="name" class="label-edit">Nome</label>
-            <input type="text" id="input-name" required  value="{{contact.name}}">
+            <input type="text" id="input-name" name='name' required  value="{{contact.name}}">
 
             <label for="name" class="label-edit">Relação</label>
-            <input type="text" id="input-relation" required  value="{{contact.relation}}">
+            <input type="text" id="input-relation" name='relation' required  value="{{contact.relation}}">
 
             <label for="name" class="label-edit">Telefone</label>
-            <input type="text" id="input-phone" required  value="{{contact.phone}}">
+            <input type="text" id="input-phone" name='phone' required  value="{{contact.phone}}">
 
             <label for="name" class="label-edit">E-mail</label>
-            <input type="text" id="input-email" required  value="{{contact.email}}">
+            <input type="text" id="input-email" name='email' required  value="{{contact.email}}">
 
             <div id="edit-btn-confirm">
                 <button type="submit" class="edit-confirm">Confirmar</button>
-                <button class="edit-confirm cancel" id="dont-edit">Cancelar</button>
+                <button type="button" class="edit-confirm cancel" id="dont-edit">Cancelar</button>
             </div>
         </form>
     </div>
