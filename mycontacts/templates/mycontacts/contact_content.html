@@ -3,7 +3,7 @@
 
 {% block content %}
 
-        <!-- modal de confirmação de exclusão do contato -->
+    <!-- modal de confirmação de exclusão do contato -->
 
     <div id="modal-container" class="modal-container-closed">
             <div id="modal">
@@ -18,13 +18,36 @@
         </div>
     </div>
 
+    <!-- modal de editar -->
+
+    <div id="edit-container" class="edit-container-closed">
+        <div id="edit-modal">
+            <label for="name" class="label-edit">Nome</label>
+            <input type="text" id="input-name" required  value="{{contact.name}}">
+
+            <label for="name" class="label-edit">Relação</label>
+            <input type="text" id="input-relation" required  value="{{contact.relation}}">
+
+            <label for="name" class="label-edit">Telefone</label>
+            <input type="text" id="input-phone" required  value="{{contact.phone}}">
+
+            <label for="name" class="label-edit">E-mail</label>
+            <input type="text" id="input-email" required  value="{{contact.email}}">
+
+            <div id="edit-btn-confirm">
+                <button type="submit" class="edit-confirm"><a href="{% url 'contact_edit' contact_id=contact.id %}" id="anchor-ap">Confirmar</a></button>
+                <button class="edit-confirm cancel" id="dont-edit">Cancelar</button>
+            </div>
+        </div>
+    </div>
+
     <div id="contact-container">
         <div id="contact">
             <div class="container-btn">
                 <button id="btn-show">=</button>
         <!-- caixa dos btns CRUD. -->
                 <div id="container-box-btn" class="box-closed">
-                    <button class="btn-box edit">Editar</button>
+                    <button class="btn-box" id="edit">Editar</button>
                     <button class="btn-box" id="delete">excluir</button>
                 </div>
             </div>

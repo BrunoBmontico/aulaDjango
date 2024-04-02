@@ -1,10 +1,38 @@
 *{
     margin: 0;
     padding: 0;
-    box-sizing: none;
 }
 
-.modal-container-open{
+.edit-confirm{
+    margin-top: 10px;
+}
+
+#edit-btn-confirm{
+    display: flex;
+    gap: 10px;
+}
+
+.edit-confirm{
+    background-color: #EB4764;
+    border-radius: 5px;
+    color: #fff;
+    border: none;
+    width: 70px;
+    height: 30px; 
+}
+
+#edit-modal{
+    background-color: #fff;
+    width: 400px;
+    height: 300px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.modal-container-open, .edit-container-open{
     background-color: #00000050;
     width: 100%;
     height: 100%;
@@ -16,6 +44,10 @@
 }
 
 .modal-container-closed{
+    display: none;
+}
+
+.edit-container-closed{
     display: none;
 }
 
@@ -44,7 +76,7 @@
     height: 30px; 
 }
 
-.no{
+.no, .cancel{
     background-color: #ffb2bf;
 }
 

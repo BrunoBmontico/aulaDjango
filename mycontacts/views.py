@@ -22,6 +22,18 @@ def contact_delete(request, contact_id):
     contact.delete()
 
     return HttpResponseRedirect('/')
+
+""" def contact_edit(request, contact_id):
+    contact = get_object_or_404(Contact, pk=contact_id)
+
+    edit_memberName = contact.get('name')
+    edit_memberRelation = contact.data.get('relation')
+    edit_memberPhone = contact.data.get('phone')
+    edit_memberEmail = contact.data.get('email')
+
+    contact.objects.update(name=) """
+
+
     
 def add(request):
     """ This function is called to add one contact member to your contact list in your Database """
@@ -44,8 +56,8 @@ def add(request):
                 email = new_member_email, 
                 )
                  
-            contact_list = Contact.objects.all()
-            return render(request, 'mycontacts/show.html',{'contacts': contact_list})    
+            
+            return HttpResponseRedirect('/')   
         
         else:
             """ redirect to the same page if django_form goes wrong """
