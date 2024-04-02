@@ -23,15 +23,27 @@ def contact_delete(request, contact_id):
 
     return HttpResponseRedirect('/')
 
-""" def contact_edit(request, contact_id):
+def contact_edit(request, contact_id):
     contact = get_object_or_404(Contact, pk=contact_id)
 
-    edit_memberName = contact.get('name')
-    edit_memberRelation = contact.data.get('relation')
-    edit_memberPhone = contact.data.get('phone')
-    edit_memberEmail = contact.data.get('email')
+    if request.method == 'POST':
+        django_form = AddForm(request.POST)
 
-    contact.objects.update(name=) """
+        if django_form.is_valid():
+
+            edited_name = django_form.data.get('name')
+            edited_relation = django_form.data.get('relation')
+            edited_phone = django_form.data.get('phone')
+            edited_email = django_form.data.get('email')
+        
+            contact.name = edited_name
+            contact.relation = edited_relation
+            contact.phone = edited_phone
+            contact.email = edited_email
+            contact.save()
+
+            return HttpResponseRedirect('/')
+
 
 
     

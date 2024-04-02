@@ -22,6 +22,9 @@
 
     <div id="edit-container" class="edit-container-closed">
         <div id="edit-modal">
+
+            {% csrf_token %}
+
             <label for="name" class="label-edit">Nome</label>
             <input type="text" id="input-name" required  value="{{contact.name}}">
 
