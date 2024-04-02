@@ -21,7 +21,7 @@
     <!-- modal de editar -->
 
     <div id="edit-container" class="edit-container-closed">
-        <div id="edit-modal">
+        <form id="edit-modal" action="{% url 'contact_edit' contact_id=contact.id %}" method="POST" role="form">
 
             {% csrf_token %}
 
@@ -38,10 +38,10 @@
             <input type="text" id="input-email" required  value="{{contact.email}}">
 
             <div id="edit-btn-confirm">
-                <button type="submit" class="edit-confirm"><a href="{% url 'contact_edit' contact_id=contact.id %}" id="anchor-ap">Confirmar</a></button>
+                <button type="submit" class="edit-confirm">Confirmar</button>
                 <button class="edit-confirm cancel" id="dont-edit">Cancelar</button>
             </div>
-        </div>
+        </form>
     </div>
 
     <div id="contact-container">

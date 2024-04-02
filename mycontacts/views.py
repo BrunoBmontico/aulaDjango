@@ -27,26 +27,24 @@ def contact_edit(request, contact_id):
     contact = get_object_or_404(Contact, pk=contact_id)
 
     if request.method == 'POST':
-        django_form = AddForm(request.POST)
 
+        django_form = AddForm(request.POST)
         if django_form.is_valid():
 
-            edited_name = django_form.data.get('name')
-            edited_relation = django_form.data.get('relation')
-            edited_phone = django_form.data.get('phone')
-            edited_email = django_form.data.get('email')
-        
-            contact.name = edited_name
-            contact.relation = edited_relation
-            contact.phone = edited_phone
-            contact.email = edited_email
+            edit_name = django_form.data.get('name')
+            edit_relation = django_form.data.get('relation')
+            edit_phone = django_form.data.get('phone')
+            edit_email = django_form.data.get('email')
+
+            contact.name = edit_name
+            contact.relation = edit_relation
+            contact.phone = edit_phone
+            contact.email = edit_email
             contact.save()
-
+            
             return HttpResponseRedirect('/')
+        
 
-
-
-    
 def add(request):
     """ This function is called to add one contact member to your contact list in your Database """
     if request.method == 'POST':
